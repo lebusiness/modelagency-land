@@ -1,0 +1,69 @@
+@use '../abstracts/' as *;
+
+.promo {
+    background-size: cover;
+    background-position-y: 50px;
+    background-position-x: 950px;
+    background-repeat: no-repeat;
+    height: 100vh;
+    @media (max-width: map-get($container-max-widths, lg)) {
+        height: 500px;
+    }
+    @media (max-width: map-get($container-max-widths, md)) {
+        background: linear-gradient(rgba(224,217,207,0.149), rgba(224,217,207,0.149)), url('./../imgs/promo/2.JPG');
+        background-position-x: center;
+        background-size: cover;
+    }
+    &__container {
+        height: calc(100vh - 80px);
+        margin: 0 auto;
+        @media (max-width: map-get($container-max-widths, lg)) {
+            height: 420px;
+        }
+    }
+    &__inner {
+        height: inherit;
+        @include flex(row,center,center);
+        background: linear-gradient(rgba(219,210,199, 0.779), rgba(219,210,199, 0.889));
+        @media (max-width: map-get($container-max-widths, md)) {
+            padding: 40px 0;
+        }
+    }
+    &__content {
+        height: inherit;
+        flex: 1;
+        @include flex(column,center,center);
+        padding: 0 40px;
+    }
+    &__photo {
+        height: inherit;
+        @include flex(row,flex-end,center);
+        opacity: 0.85;
+        align-self: flex-end;
+        @media (max-width: map-get($container-max-widths, md)) {
+            img {
+                display: none;
+            }
+        }
+        
+
+    }
+    &__title {
+        font-family: 'CaviarDreams', sans-serif;
+        line-height: 1.3;
+        font-weight: 400;
+        font-size: 44px;
+        color: #655d4c;
+        text-align: center;
+        @media (max-width: map-get($container-max-widths, lg)) {
+            font-size: 35px;
+        }
+        @media (max-width: map-get($container-max-widths, md)) {
+            font-size: 30px;
+        }
+
+    }
+    &__btn {
+        margin-top: 20px;
+    }
+}

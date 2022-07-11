@@ -1,0 +1,93 @@
+@use '../abstracts/' as *;
+
+.faq {
+    background: #f2f0ed;
+    background: #f4f2f0;
+    padding: $section-padding 0 90px 0;
+    &__items {
+        margin-top: 40px;
+    }
+    &__item {
+        margin-top: 30px;
+        &-question {
+            font-size: 18px;
+            color: $main-color;
+            @media (max-width: map-get($container-max-widths, md)) {
+              font-size: 16px;
+            }
+            
+        }
+        &-answer {
+            font-size: 14px;
+            color: #595959;
+            padding-right: 70px;
+            @media (max-width: map-get($container-max-widths, md)) {
+              padding-right: 60px;
+            }
+            @media (max-width: map-get($container-max-widths, sm)) {
+              margin-top: 5px;
+              padding-right: 35px;
+              font-size: 13px;
+            }
+        }
+    }
+}
+summary::-webkit-details-marker{display:none;}
+summary::-moz-list-bullet{list-style-type:none;}
+summary::marker{display:none;} 
+summary {
+   padding: 0 35px 0 0;
+   display:inline-block;
+   font-size:1.4em;
+   cursor: pointer;
+   position: relative;
+}
+
+details[open] > summary:after {
+  transform: rotate(360deg);
+}
+
+details[open] summary + *{ 
+  animation: sweep .3s ease;
+  animation-fill-mode: both;
+}
+
+@keyframes sweep {
+  0%    {transform: translate(5px, 0px);}
+  100%  {opacity: 1;transform: translate(12px, 5px)}
+}
+
+details > summary {
+    list-style: none;
+    cursor: pointer;
+}
+  summary {
+     display:block;
+     cursor: pointer;
+     position: relative;
+  }
+  :focus {
+    outline: 0;
+  }
+  summary:after {  
+    content: "";
+    top: 0%;
+    right: 0;
+    background-image: url("./../imgs/faq/arrow.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;  
+    position: absolute;
+    transition: transform .3s;
+    transform: rotate(270deg);
+  }
+  // details[open] {
+  //   background: linear-gradient(0deg, rgba(233, 188, 71, 0.02), rgba(233, 188, 71, 0.02)), linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), rgba(0, 0, 0, 0.18);
+  // }
+  // details[open] > summary {
+  //   color: #333;
+  // }
+  // details[open] > summary:after {
+  //   background-image: url("https://avatars.mds.yandex.net/i?id=b8cd74b7a35de76e7c1ff81a214d45e6-5860005-images-thumbs&n=13");
+  // }

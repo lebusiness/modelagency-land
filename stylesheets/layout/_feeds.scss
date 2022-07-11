@@ -1,0 +1,57 @@
+@use '../abstracts/' as *;
+
+.feeds {
+    padding: $section-padding 0;
+    background: linear-gradient(rgba(207, 196, 182, 0.779), rgba(204, 193, 180, 0.889)), url('./../imgs/promo/71.jpg');
+    background-size: cover;
+    &__items {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        row-gap: 50px;
+        @media (max-width: map-get($container-max-widths, lg)) {
+            grid-template-columns: 1fr 1fr;
+        }
+        @media (max-width: map-get($container-max-widths, md)) {
+            grid-template-columns: 1fr;
+        }
+    }
+    &__item {
+        height: auto;
+        justify-self: flex-start;
+        align-self: flex-start;
+        border-radius: 5px;
+        background: white;
+        padding: 20px;
+        @include flex(column, flex-start, center);
+        &-img {
+            width: 100px;
+            border-radius: 100%;
+            border: 2px solid white;
+            margin-top: -60px;
+        }
+        &-paragraph {
+            color: #787878;
+            font-size: $font--small;
+            line-height: 1.5;
+            text-align: center;
+            margin-top: 25px;
+        }
+        &-name {
+            margin-top: 12px;
+            color: $main-color;
+            font-size: 13px;
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+        &-descr {
+            margin-top: 5px;
+            color: #787878;
+            font-style: italic;
+            font-size: 11px;
+        }
+    }
+}

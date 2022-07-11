@@ -1,0 +1,91 @@
+@use '../abstracts/' as *;
+
+.contact {
+    background: #110e0a;
+    padding: $section-padding 0;
+    &__title {
+        color: white;
+    }
+    &__subtitle {
+        margin-top: 10px;
+        color: #757575;
+        font-size: 15px;
+        text-align: center;
+    }
+    &__form {
+        margin: 0 auto;
+        margin-top: 50px;
+        width: 550px;
+        &-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 25px;
+            row-gap: 20px;
+            grid-template-areas: 
+            "name mail"
+            "subject subject"
+            "message message";
+            @media (max-width: map-get($container-max-widths, sm)) {
+                column-gap: 15px;
+                row-gap: 15px;
+                grid-template-areas: 
+                    "name name"
+                    "mail mail"
+                    "subject subject"
+                    "message message";
+              }
+        }
+        @media (max-width: map-get($container-max-widths, md)) {
+            width: 100%;
+        }
+    }
+    &__btn {
+        margin-top: 20px;
+        width: 100%;
+        &--tg {
+            margin-top: 10px;
+            width: auto;
+        }
+    }
+    &__inp {
+        width: 100%;
+        border: none;
+        color: #8f8f8f;
+        font-style: italic;
+        font-size: 15px;
+        background-color: #ffffff12;
+        padding: 18px 18px;
+        box-shadow: 0px 0px 5px 4px rgb(0 0 0 / 10%);
+        border-radius: 4px;
+        @media (max-width: map-get($container-max-widths, sm)) {
+            padding: 12px;
+            font-size: 13px;
+          }
+    }
+    .inp {
+        &--name {
+            grid-area: name;
+        }
+        &--mail {
+            grid-area: mail;
+        }
+        &--subject {
+            grid-area: subject;
+        }
+        &--message {
+            grid-area: message;
+        }
+
+    }
+}
+fieldset {
+    padding: 20px;
+    border: 1px solid rgb(74, 74, 74);
+    border-radius: 6px;
+}
+legend {
+    margin-bottom: 10px;
+}
+.flex-wrap {
+    @include flex(column, center, center)
+}

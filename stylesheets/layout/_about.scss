@@ -1,0 +1,17 @@
+@use '../abstracts/' as *;
+
+.about {
+    padding: $section-padding 0 90px 0;
+    background: linear-gradient(rgba(224,217,207,0.949), rgba(224,217,207,0.949)), url('./../imgs/promo/bg.jpg');
+    // background: linear-gradient(rgba(236, 228, 218, 0.919), rgba(227, 218, 210, 0.989)), url('../../imgs/promo/bg2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+
+    &__paragraph {
+        color: #333333;
+        // color: white;
+        margin-top: 40px;
+        font-size: $font--small;
+        line-height: 1.5;
+    }
+}

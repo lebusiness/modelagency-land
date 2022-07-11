@@ -1,0 +1,8 @@
+@use '../abstracts/' as *;
+.title {
+    color: $main-color;
+    font-size: 28px;
+    text-align: center;
+    font-weight: 500;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.01);
+}
